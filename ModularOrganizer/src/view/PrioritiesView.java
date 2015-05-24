@@ -14,7 +14,7 @@ public class PrioritiesView {
 	JTextPane mainPane;
 	JPanel addTask, removeTask;
 	JTextArea addTaskName, addTaskPriority, removeTaskId;
-	JButton addTaskButton, removeTaskButton;
+	public JButton addTaskButton, removeTaskButton;
 	
 	
 	public PrioritiesView(){
@@ -58,10 +58,14 @@ public class PrioritiesView {
 		removeTask.setBounds(450, 400, 300, 150);
 		TitledBorder removeTaskTitle = BorderFactory.createTitledBorder("Remove an outdated task");
 		removeTask.setBorder(removeTaskTitle);
-		removeTaskId = new JTextArea("Give ID of a task you want to remove");
+		removeTaskId = new JTextArea("Give ID of a task you want to remove", 1, 25);
 		removeTask.add(removeTaskId);
 		frame.add(removeTask);
-		
+		removeTaskButton = new JButton("Remove Task");
+		removeTask.add(new JLabel("__________________________"));
+		removeTask.add(new JLabel("__________________________"));
+		removeTaskButton.setPreferredSize(new Dimension(250, 50));
+		removeTask.add(removeTaskButton);
 		
 		
 		
