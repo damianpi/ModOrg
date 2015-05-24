@@ -1,6 +1,9 @@
+//Author: Damian Piela 
 package model;
 
-public class Priority {
+import java.io.Serializable;
+
+public class Priority implements Serializable {
 	
 	public int level;
 	public String name;

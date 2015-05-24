@@ -32,6 +32,8 @@ public class PrioritiesController {
 				refreshPriorities();
 			}//end of actionPerformed()
 		});//end of addActionListener()
+		
+		refreshPriorities();
 	}
 
 	public void refreshPriorities(){

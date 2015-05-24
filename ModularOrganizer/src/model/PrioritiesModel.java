@@ -42,14 +42,15 @@ public class PrioritiesModel {
 				Files.delete(location.toPath());
 			}catch(Exception e){}
 			
-			location.mkdir();
+			location.mkdirs();
 		}else{
-			location.mkdir();
+			location.mkdirs();
 		}
 		
 		try{
+			PrioritiesData pd = data;
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("C:/ModularOrganizer/Priorities/priorities.pd"));
-			out.writeObject(data);
+			out.writeObject(pd);
 			out.close();
 		}catch(Exception e){}
 		
