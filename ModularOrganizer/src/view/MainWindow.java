@@ -1,3 +1,4 @@
+// Author: Damian Piela
 package view;
 
 import javax.swing.*;
@@ -12,12 +13,18 @@ public class MainWindow {
 	JLabel instructions;
 	JButton priorities, phonebook, contacts, cipheringTool;
 	PrioritiesController prioritiesController;
+	PhonebookController phonebookController;
+	ContactsController contactsController;
 	
-	public MainWindow(PrioritiesController prioritiesController){
+	
+	
+	
+	public MainWindow(PrioritiesController prioritiesController, PhonebookController phonebookController, 
+								ContactsController contactsController){
 		
 		this.prioritiesController = prioritiesController;
-		
-		
+		this.phonebookController = phonebookController;
+		this.contactsController = contactsController;
 		
 		frame = new JFrame();
 		frame.setSize(400, 300);
@@ -40,14 +47,29 @@ public class MainWindow {
 		
 		phonebook = new JButton("<html><center><b><u>Phonebook</u></b></center>\n\n<center>Keep your contacts in one place");
 		phonebook.setBounds(200, 70, 150, 60);
+		phonebook.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				phonebookController.view.frame.setVisible(true);
+			}
+		});
 		frame.add(phonebook);
 		
 		contacts = new JButton("<html><center><b><u>Contacts</u></b></center>\n\n<center>All the things you never want to forget");
 		contacts.setBounds(30, 150, 150, 60);
+		contacts.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				contactsController.view.frame.setVisible(true);
+			}
+		});
 		frame.add(contacts);
 		
 		cipheringTool = new JButton("<html><center><b><u>CipheringTool</u></b></center>\n\n<center>Cuz fuck the NSA :)");
 		cipheringTool.setBounds(200, 150, 150, 60);
+//		cipheringTool.addActionListener(new ActionListener(){
+//			public void actionPerformed(ActionEvent e){
+//				cipheringToolController.view.frame.setVisible(true);
+//			}
+//		});
 		frame.add(cipheringTool);
 		
 		

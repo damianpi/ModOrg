@@ -1,3 +1,5 @@
+// Author: Damian Piela
+ 
 package controller;
 
 import model.PhonebookModel;
@@ -10,5 +12,5 @@ public class PhonebookController {
 	public PhonebookController(PhonebookModel model, PhonebookView view){
 		this.model = model;
 		this.view = view;
-	}
-}
+	}//end of const
+}//end of class

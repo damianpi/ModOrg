@@ -1,3 +1,4 @@
+// Author: Damian Piela
 package main;
 
 import view.*;
@@ -11,15 +12,17 @@ public class ModularOrganizer {
 		PrioritiesView prioritiesView = new PrioritiesView();
 		PrioritiesController prioritiesController = new PrioritiesController(prioritiesModel, prioritiesView);
 		
+		PhonebookModel phonebookModel = new PhonebookModel();
+		PhonebookView phonebookView = new PhonebookView();
+		PhonebookController phonebookController = new PhonebookController(phonebookModel, phonebookView); 
+		
+		ContactsModel contactsModel = new ContactsModel();
+		ContactsView contactsView = new ContactsView();
+		ContactsController contactsController = new ContactsController(contactsModel, contactsView); 
+		
+		MainWindow mainWindow = new MainWindow(prioritiesController, phonebookController, contactsController);
 		
 		
 		
-		
-		
-		
-		MainWindow mainWindow = new MainWindow(prioritiesController);
-		
-		
-		
-	}
-}
+	}//end of main
+}//end of class

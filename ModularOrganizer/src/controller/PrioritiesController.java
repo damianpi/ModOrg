@@ -1,3 +1,4 @@
+//Author: Damian Piela
 package controller;
 
 import model.PrioritiesModel;
@@ -12,13 +13,6 @@ public class PrioritiesController {
 		this.model = model;
 		this.view = view;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }//end of class
