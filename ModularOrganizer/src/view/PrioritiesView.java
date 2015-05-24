@@ -9,11 +9,11 @@ import java.awt.*;
 
 public class PrioritiesView {
 
-	JFrame frame;
-	JLabel instructions;
-	JTextPane mainPane;
-	JPanel addTask, removeTask;
-	JTextArea addTaskName, addTaskPriority, removeTaskId;
+	public JFrame frame;
+	public JLabel instructions;
+	public JTextPane mainPane;
+	public JPanel addTask, removeTask;
+	public JTextArea addTaskName, addTaskPriority, removeTaskId;
 	public JButton addTaskButton, removeTaskButton;
 	
 	

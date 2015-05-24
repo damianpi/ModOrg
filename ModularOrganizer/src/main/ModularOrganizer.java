@@ -23,6 +23,16 @@ public class ModularOrganizer {
 		MainWindow mainWindow = new MainWindow(prioritiesController, phonebookController, contactsController);
 		
 		
+//		PrioritiesData pd = new PrioritiesData();
+//		pd.data.add(new Priority(1, "a"));
+//		pd.data.add(new Priority(2, "ag"));
+//		pd.data.add(new Priority(3, "af"));
+//		pd.data.add(new Priority(1, "agh"));
+//		pd.data.add(new Priority(2, "aa"));
+//		
+//		prioritiesController.refreshPriorities(pd.data);
+		
+		
 		
 	}//end of main
 }//end of class

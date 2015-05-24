@@ -2,8 +2,8 @@ package model;
 
 public class Priority {
 	
-	int level;
-	String name;
+	public int level;
+	public String name;
 	
 	public Priority(int level, String name){
 		this.level = level;
