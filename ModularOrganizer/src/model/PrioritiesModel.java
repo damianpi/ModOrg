@@ -30,6 +30,8 @@ public class PrioritiesModel {
 	
 	
 	public void addPriority(int level, String name){
+		if(level > 3) level = 3;
+		if(level < 1) level = 1;
 		Priority priority = new Priority(level, name);
 		data.data.add(priority);
 	}

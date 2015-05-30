@@ -33,6 +33,23 @@ public class PrioritiesController {
 			}//end of actionPerformed()
 		});//end of addActionListener()
 		
+		this.view.removeTaskButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+			
+				try{	
+					int index = Integer.parseInt(view.removeTaskId.getText().trim());
+					model.data.data.remove(index);
+				}catch(NumberFormatException nfe){
+					view.removeTaskId.setText("Enter a correct ID number");
+				}catch(Exception ex){
+					view.removeTaskId.setText("Wrong ID number");
+				}
+				
+				model.savePriorities();
+				refreshPriorities();
+			}
+		});//end of addActionListener()
+		
 		refreshPriorities();
 	}
 
@@ -55,5 +72,11 @@ public class PrioritiesController {
 		}
 		view.mainPane.setText(s);
 	}
+	
+	
+	public void removePriority(){
+		
+	}
+	
 	
 }//end of class
