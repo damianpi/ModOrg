@@ -24,7 +24,6 @@ public class PrioritiesView {
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		
 		
-		//nie jest zcentrowane?!?!?!
 		instructions = new JLabel("<html><center>This is your priorities list</center>\nFeel free to add new tasks or remove outdated ones");
 		instructions.setBounds(250, 4, 600, 30);
 		frame.add(instructions);
