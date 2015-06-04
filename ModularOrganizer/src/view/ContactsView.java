@@ -14,7 +14,7 @@ public class ContactsView {
 	JLabel instructions;
 	JPanel tools;
 	public JButton selectButton, addContactButton, removeContactButton;
-	public DefaultListModel listModel;
+	//public DefaultListModel listModel;
 	
 	
 	
@@ -41,13 +41,13 @@ public class ContactsView {
 //		mainPane = new JPanel(new BorderLayout());
 //		mainPane.setBounds(50, 50, 700, 350);
 		
-		this.listModel = new DefaultListModel();
+		//this.listModel = new DefaultListModel();
 		
-		list = new JList(listModel);
-		list.setLayoutOrientation(JList.VERTICAL);
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setBounds(50, 50, 700, 300);
-		frame.add(list);
+		//list = new JList(listModel);
+//		list.setLayoutOrientation(JList.VERTICAL);
+//		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//		list.setBounds(50, 50, 700, 300);
+//		frame.add(list);
 		
 		
 //		mainPane.add(list);
@@ -55,6 +55,17 @@ public class ContactsView {
 //		scrollField.setBounds(50, 50, 700, 350);
 //		frame.add(mainPane);
 //		frame.add(mainPane);
+		
+		
+		////////////////////////////////
+		
+//		list = new JList(new DefaultListModel());
+//
+//		list.setLayoutOrientation(JList.VERTICAL);
+//		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//		list.setBounds(50, 50, 700, 300);
+//		frame.add(list);
+		
 		
 
 		addContactButton = new JButton("New contact");
