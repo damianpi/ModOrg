@@ -18,9 +18,12 @@ public class ModularOrganizer {
 		
 		ContactsModel contactsModel = new ContactsModel();
 		ContactsView contactsView = new ContactsView();
-		ContactsController contactsController = new ContactsController(contactsModel, contactsView); 
+		ContactMakeView contactMakeView = new ContactMakeView();
+		ContactsController contactsController = new ContactsController(contactsModel, contactsView, contactMakeView); 
 		
 		MainWindow mainWindow = new MainWindow(prioritiesController, phonebookController, contactsController);
+		
+
 		
 		
 		
