@@ -1,3 +1,5 @@
+//Autor: Marcin Czaja
+
 package test;
 
 import static org.junit.Assert.*;
@@ -24,9 +26,9 @@ public class testContact {
 
 	@Before
 	public void setUp() throws Exception {
-		contact = new Contact("Pawe³", "Pocieszny", "666333111",
-				"Warszawa", "02.02.1989", "Lizaczki", "Warzywa",
-				"Gre", "Wykszta³cenie œrednie", "Nie dzia³a komputer");
+		contact = new Contact("Harry", "Potter", "688333111",
+				"Warsaw", "02.02.1989", "Fruits", "Vegetables",
+				"Game", "University education", "Computer crash");
 	}
 
 	@After
@@ -35,17 +37,50 @@ public class testContact {
 	}
 
 	@Test
-	public void testContact1() {
+	public void testContactFirst() {
 		
-		assertEquals("Nie dzia³a", "Pawe³", contact.name);
-		assertEquals("Nie dzia³a", "Pocieszny", contact.surname);
-		assertEquals("Nie dzia³a", "666333111", contact.phoneNumber);
-		assertEquals("Nie dzia³a", "Warszawa", contact.address);
-		assertEquals("Nie dzia³a", "02.02.1989", contact.birthdate);
-		assertEquals("Nie dzia³a", "Lizaczki", contact.likes);
-		assertEquals("Nie dzia³a", "Warzywa", contact.dislikes);
-		assertEquals("Nie dzia³a", "Gre", contact.wantsOnBirthday);
-		assertEquals("Nie dzia³a", "Wykszta³cenie œrednie", contact.education);
-		assertEquals("Nie dzia³a", "Nie dzia³a komputer", contact.canHelpWith);
+		assertEquals("Fail: variable name", "Harry", contact.name);
+		assertEquals("Fail: variable surname", "Potter", contact.surname);
+		assertEquals("Fail: variable phoneNumber", "688333111", contact.phoneNumber);
+		assertEquals("Fail: variable address", "Warsaw", contact.address);
+		assertEquals("Fail: variable birthdate", "02.02.1989", contact.birthdate);
+		assertEquals("Fail: variable likes", "Fruits", contact.likes);
+		assertEquals("Fail: variable dislikes", "Vegetables", contact.dislikes);
+		assertEquals("Fail: variable wantsOnBirthday", "Game", contact.wantsOnBirthday);
+		assertEquals("Fail: variable education", "University education", contact.education);
+		assertEquals("Fail: variable canHelpWith", "Computer crash", contact.canHelpWith);
+	}
+	
+	@Test
+	public void testContactSecond() {
+		
+	    Contact contact2 = new Contact("Harry", "Potter", "688333111",
+				"Warsaw", "02.02.1989", "Fruits", "Vegetables",
+				"Game", "University education", "Computer crash");
+	    
+	    assertEquals("Fail: variable name", contact2.name, contact.name);
+		assertEquals("Fail: variable surname", contact2.surname, contact.surname);
+		assertEquals("Fail: variable phoneNumber", contact2.phoneNumber, contact.phoneNumber);
+		assertEquals("Fail: variable address", contact2.address, contact.address);
+		assertEquals("Fail: variable birthdate", contact2.birthdate, contact.birthdate);
+		assertEquals("Fail: variable likes", contact2.likes, contact.likes);
+		assertEquals("Fail: variable dislikes", contact2.dislikes, contact.dislikes);
+		assertEquals("Fail: variable wantsOnBirthday", contact2.wantsOnBirthday, contact.wantsOnBirthday);
+		assertEquals("Fail: variable education", contact2.education, contact.education);
+		assertEquals("Fail: variable canHelpWith", contact2.canHelpWith, contact.canHelpWith);
+	}
+	
+	@Test
+	public void testContactThird() {
+	    assertEquals("Fail: variable name", contact.name, contact.name);
+		assertEquals("Fail: variable surname", contact.surname, contact.surname);
+		assertEquals("Fail: variable phoneNumber", contact.phoneNumber, contact.phoneNumber);
+		assertEquals("Fail: variable address", contact.address, contact.address);
+		assertEquals("Fail: variable birthdate", contact.birthdate, contact.birthdate);
+		assertEquals("Fail: variable likes", contact.likes, contact.likes);
+		assertEquals("Fail: variable dislikes", contact.dislikes, contact.dislikes);
+		assertEquals("Fail: variable wantsOnBirthday", contact.wantsOnBirthday, contact.wantsOnBirthday);
+		assertEquals("Fail: variable education", contact.education, contact.education);
+		assertEquals("Fail: variable canHelpWith", contact.canHelpWith, contact.canHelpWith);
 	}
 }
