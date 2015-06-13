@@ -4,26 +4,24 @@ package controller;
 import model.PrioritiesModel;
 import model.Priority;
 import view.PrioritiesView;
-import java.util.*;
 import java.awt.event.*;
-import javax.swing.*;
-import java.awt.*;
 
 public class PrioritiesController {
 
-	PrioritiesModel model;
-	public PrioritiesView view;
+	private PrioritiesModel model;
+	private PrioritiesView view;
 	
+	//constructor
 	public PrioritiesController(PrioritiesModel model, PrioritiesView view){
 		this.model = model;
 		this.view = view;
 		
-		this.view.addTaskButton.addActionListener(new ActionListener(){
+		this.view.getAddTaskButton().addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				String name = view.addTaskName.getText().trim();
+				String name = view.getAddTaskName().getText().trim();
 				int priority = 0;
 				try{	
-					priority = Integer.parseInt(view.addTaskPriority.getText().trim());
+					priority = Integer.parseInt(view.getAddTaskPriority().getText().trim());
 				}catch(Exception ee){
 					priority = 3;
 				}
@@ -33,16 +31,16 @@ public class PrioritiesController {
 			}//end of actionPerformed()
 		});//end of addActionListener()
 		
-		this.view.removeTaskButton.addActionListener(new ActionListener(){
+		this.view.getRemoveTaskButton().addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 			
 				try{	
-					int index = Integer.parseInt(view.removeTaskId.getText().trim());
-					model.data.data.remove(index);
+					int index = Integer.parseInt(view.getRemoveTaskId().getText().trim());
+					model.getData().getData().remove(index);
 				}catch(NumberFormatException nfe){
-					view.removeTaskId.setText("Enter a correct ID number");
+					view.getRemoveTaskId().setText("Enter a correct ID number");
 				}catch(Exception ex){
-					view.removeTaskId.setText("Wrong ID number");
+					view.getRemoveTaskId().setText("Wrong ID number");
 				}
 				
 				model.savePriorities();
@@ -51,32 +49,33 @@ public class PrioritiesController {
 		});//end of addActionListener()
 		
 		refreshPriorities();
-	}
+	}//end of constructor
 
 	public void refreshPriorities(){
 		String s = "";
-		for(Priority p : model.data.data){
-			int index = model.data.data.indexOf(p);
-			s = s + "ID: " + Integer.toString(index) + " -- Priority Level: " + Integer.toString(p.level)
-					+ "\n" + p.name + "\n---------------------------------------------\n";
+		for(Priority p : model.getData().getData()){
+			int index = model.getData().getData().indexOf(p);
+			s = s + "ID: " + Integer.toString(index) + " -- Priority Level: " + Integer.toString(p.getLevel())
+					+ "\n" + p.getName() + "\n---------------------------------------------\n";
 		}	
-		view.mainPane.setText(s);
+		view.getMainPane().setText(s);
+	}//end of refreshPriorities
+	
+
+	//getters and setters
+	public PrioritiesModel getModel() {
+		return model;
 	}
-	
-	public void refreshPriorities(ArrayList<Priority> pr){
-		String s = "";
-		for(Priority p : pr){
-			int index = pr.indexOf(p);
-			s = s + "\n\nID: " + Integer.toString(index) + " -- Priority Level: " + Integer.toString(p.level)
-					+ "\n" + p.name;				
-		}
-		view.mainPane.setText(s);
+
+	public void setModel(PrioritiesModel model) {
+		this.model = model;
 	}
-	
-	
-	public void removePriority(){
-		
+
+	public PrioritiesView getView() {
+		return view;
 	}
-	
-	
+
+	public void setView(PrioritiesView view) {
+		this.view = view;
+	}
 }//end of class
