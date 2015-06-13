@@ -74,12 +74,6 @@ public class testProritiesData {
 	@Test
 	public void testPrioritiesDataThird() {
 		
-		PrioritiesData prioritiesData2 = new PrioritiesData();
-		
-		prioritiesData2.data.add(new Priority(1, "Priority1"));
-		prioritiesData2.data.add(new Priority(2, "Priority2"));
-		prioritiesData2.data.add(new Priority(3, "Priority3"));
-		
 		assertEquals("Fail: variable level, index: " + 0, 1, prioritiesData.data.get(0).level);
 		assertEquals("Fail: variable name, index: " + 0, "Priority1", prioritiesData.data.get(0).name);
 		
