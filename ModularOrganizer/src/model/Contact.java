@@ -1,10 +1,11 @@
+//Author: Damian Piela
 package model;
 
 import java.io.Serializable;
 
 public class Contact implements Serializable {
 	
-	public String name, surname, phoneNumber, address, birthdate,
+	private String name, surname, phoneNumber, address, birthdate,
 		likes, dislikes, wantsOnBirthday, education, canHelpWith;
 
 	public Contact(String name, String surname, String phoneNumber,
@@ -21,5 +22,85 @@ public class Contact implements Serializable {
 		this.education = education;
 		this.canHelpWith = canHelpWith;
 	}
-	
+
+	//getters and setters
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(String birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public String getLikes() {
+		return likes;
+	}
+
+	public void setLikes(String likes) {
+		this.likes = likes;
+	}
+
+	public String getDislikes() {
+		return dislikes;
+	}
+
+	public void setDislikes(String dislikes) {
+		this.dislikes = dislikes;
+	}
+
+	public String getWantsOnBirthday() {
+		return wantsOnBirthday;
+	}
+
+	public void setWantsOnBirthday(String wantsOnBirthday) {
+		this.wantsOnBirthday = wantsOnBirthday;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+
+	public void setEducation(String education) {
+		this.education = education;
+	}
+
+	public String getCanHelpWith() {
+		return canHelpWith;
+	}
+
+	public void setCanHelpWith(String canHelpWith) {
+		this.canHelpWith = canHelpWith;
+	}
 }//end of class
