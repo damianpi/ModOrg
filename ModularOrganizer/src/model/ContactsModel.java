@@ -1,3 +1,4 @@
+//Author: Damian Piela
 package model;
 
 import java.io.File;
@@ -9,7 +10,7 @@ import java.nio.file.Files;
 
 public class ContactsModel {
 	
-	public ContactsData data;
+	private ContactsData data;
 	
 	public ContactsModel(){
 		data = new ContactsData();
@@ -20,7 +21,7 @@ public class ContactsModel {
 			data = (ContactsData)in.readObject();
 			in.close();
 		}catch(Exception e){}
-	}//end of constr
+	}//end of constructor
 	
 	
 	public void saveContacts(){
@@ -44,21 +45,15 @@ public class ContactsModel {
 		}catch(Exception e){}
 		
 		
-	}//end of savePriorities()
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}//end of saveContacts
+
+	//getters and setters
+	public ContactsData getData() {
+		return data;
+	}
+
+
+	public void setData(ContactsData data) {
+		this.data = data;
+	}
 }//end of class
