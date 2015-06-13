@@ -2,22 +2,16 @@
 package view;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
-
-import java.awt.*;
 
 public class ContactsView {
 
-	public JFrame frame;
-	JPanel mainPane;
+	private JFrame frame;
+	private JPanel mainPane;
 	public JList list;
-	JLabel instructions;
-	JPanel tools;
-	public JButton selectButton, addContactButton, removeContactButton;
-	//public DefaultListModel listModel;
-	
-	
-	
+	private JLabel instructions;
+	private JPanel tools;
+	private JButton selectButton, addContactButton, removeContactButton;
+
 	public ContactsView(){
 		
 		frame = new JFrame("Contacts");
@@ -28,45 +22,6 @@ public class ContactsView {
 		instructions = new JLabel("<html><center>This is your contacts list</center>\nChoose one to see more details, or add a new one");
 		instructions.setBounds(250, 4, 600, 30);
 		frame.add(instructions);
-		
-		
-//		//testowe
-//		DefaultListModel modelList = new DefaultListModel();
-//		modelList.addElement("jakis tekst");
-//		modelList.addElement("jakis tekst");
-//		modelList.addElement("jakis tekst");
-//		modelList.addElement("jakis tekst");
-//		//koniec testowe
-		
-//		mainPane = new JPanel(new BorderLayout());
-//		mainPane.setBounds(50, 50, 700, 350);
-		
-		//this.listModel = new DefaultListModel();
-		
-		//list = new JList(listModel);
-//		list.setLayoutOrientation(JList.VERTICAL);
-//		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//		list.setBounds(50, 50, 700, 300);
-//		frame.add(list);
-		
-		
-//		mainPane.add(list);
-//		JScrollPane scrollField = new JScrollPane(mainPane);
-//		scrollField.setBounds(50, 50, 700, 350);
-//		frame.add(mainPane);
-//		frame.add(mainPane);
-		
-		
-		////////////////////////////////
-		
-//		list = new JList(new DefaultListModel());
-//
-//		list.setLayoutOrientation(JList.VERTICAL);
-//		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//		list.setBounds(50, 50, 700, 300);
-//		frame.add(list);
-		
-		
 
 		addContactButton = new JButton("New contact");
 		addContactButton.setBounds(80, 430, 150, 80);
@@ -79,13 +34,73 @@ public class ContactsView {
 		selectButton = new JButton("<html><center><font size=7> Select");
 		selectButton.setBounds(580, 415, 150, 130);
 		frame.add(selectButton);
-		
-
-		
+	
 		frame.setVisible(false);
 		
-	}//end of constr
-	
-	
-	
+	}//end of constructor
+
+	//getters and setters
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JPanel getMainPane() {
+		return mainPane;
+	}
+
+	public void setMainPane(JPanel mainPane) {
+		this.mainPane = mainPane;
+	}
+
+	public JList getList() {
+		return list;
+	}
+
+	public void setList(JList list) {
+		this.list = list;
+	}
+
+	public JLabel getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(JLabel instructions) {
+		this.instructions = instructions;
+	}
+
+	public JPanel getTools() {
+		return tools;
+	}
+
+	public void setTools(JPanel tools) {
+		this.tools = tools;
+	}
+
+	public JButton getSelectButton() {
+		return selectButton;
+	}
+
+	public void setSelectButton(JButton selectButton) {
+		this.selectButton = selectButton;
+	}
+
+	public JButton getAddContactButton() {
+		return addContactButton;
+	}
+
+	public void setAddContactButton(JButton addContactButton) {
+		this.addContactButton = addContactButton;
+	}
+
+	public JButton getRemoveContactButton() {
+		return removeContactButton;
+	}
+
+	public void setRemoveContactButton(JButton removeContactButton) {
+		this.removeContactButton = removeContactButton;
+	}
 }//end of class
