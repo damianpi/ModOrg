@@ -9,15 +9,13 @@ import controller.*;
 
 
 public class MainWindow {
-	JFrame frame;
-	JLabel instructions;
-	JButton priorities, phonebook, contacts, cipheringTool;
-	PrioritiesController prioritiesController;
-	PhonebookController phonebookController;
-	ContactsController contactsController;
-	
-	
-	
+	private JFrame frame;
+	private JLabel instructions;
+	private JButton priorities, phonebook, contacts, cipheringTool;
+	private PrioritiesController prioritiesController;
+	private PhonebookController phonebookController;
+	private ContactsController contactsController;
+
 	
 	public MainWindow(PrioritiesController prioritiesController, PhonebookController phonebookController, 
 								ContactsController contactsController){
@@ -40,7 +38,7 @@ public class MainWindow {
 		priorities.setBounds(30, 70, 150, 60);
 		priorities.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				prioritiesController.view.frame.setVisible(true);
+				prioritiesController.getView().getFrame().setVisible(true);
 			}
 		});
 		frame.add(priorities);
@@ -58,33 +56,15 @@ public class MainWindow {
 		contacts.setBounds(30, 150, 150, 60);
 		contacts.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				contactsController.view.frame.setVisible(true);
+				contactsController.getView().getFrame().setVisible(true);
 			}
 		});
 		frame.add(contacts);
 		
-		cipheringTool = new JButton("<html><center><b><u>CipheringTool</u></b></center>\n\n<center>Cuz fuck the NSA :)");
+		cipheringTool = new JButton("<html><center><b><u>CipheringTool</u></b></center>\n\n<center>Let them wonder");
 		cipheringTool.setBounds(200, 150, 150, 60);
-//		cipheringTool.addActionListener(new ActionListener(){
-//			public void actionPerformed(ActionEvent e){
-//				cipheringToolController.view.frame.setVisible(true);
-//			}
-//		});
+		cipheringTool.setEnabled(false);
 		frame.add(cipheringTool);
-		
-		
-		
-		
 		frame.setVisible(true);
 	}//end of constructor
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }//end of class
