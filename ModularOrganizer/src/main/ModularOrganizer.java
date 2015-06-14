@@ -5,7 +5,6 @@ import view.*;
 import model.*;
 import controller.*;
 
-
 public class ModularOrganizer {
 	public static void main(String[] args) {
 		PrioritiesModel prioritiesModel = new PrioritiesModel();
@@ -22,10 +21,5 @@ public class ModularOrganizer {
 		ContactsController contactsController = new ContactsController(contactsModel, contactsView, contactMakeView); 
 		
 		MainWindow mainWindow = new MainWindow(prioritiesController, phonebookController, contactsController);
-		
-
-		
-		
-		
 	}//end of main
 }//end of class

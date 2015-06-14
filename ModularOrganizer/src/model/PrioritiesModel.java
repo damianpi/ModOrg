@@ -1,3 +1,4 @@
+//Author: Damian Piela
 package model;
 
 import java.io.File;
@@ -9,9 +10,8 @@ import java.nio.file.Files;
 
 public class PrioritiesModel {
 	
-	public PrioritiesData data;
-	
-	
+	private PrioritiesData data;
+
 	public PrioritiesModel(){
 		this.data = new PrioritiesData();
 		
@@ -21,19 +21,13 @@ public class PrioritiesModel {
 			data = (PrioritiesData)in.readObject();
 			in.close();
 		}catch(Exception e){}
-		
-	}//end of constr
-	
-	
-	
-	
-	
-	
+	}//end of constructor
+
 	public void addPriority(int level, String name){
 		if(level > 3) level = 3;
 		if(level < 1) level = 1;
 		Priority priority = new Priority(level, name);
-		data.data.add(priority);
+		data.getData().add(priority);
 	}
 	
 	public void savePriorities(){
@@ -55,9 +49,14 @@ public class PrioritiesModel {
 			out.writeObject(pd);
 			out.close();
 		}catch(Exception e){}
-		
-		
 	}//end of savePriorities()
-	
-	
+
+	//getters and setters
+	public PrioritiesData getData() {
+		return data;
+	}
+
+	public void setData(PrioritiesData data) {
+		this.data = data;
+	}
 }//end of class

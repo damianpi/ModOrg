@@ -5,10 +5,10 @@ import java.awt.*;
 
 public class ContactMakeView {
 	
-	public JFrame frame;
-	JLabel instructions;
-	public JTextArea name, surname, phoneNumber, address, birthdate, likes, dislikes, wantsOnBirthday, education, canHelpWith;
-	public JButton save;
+	private JFrame frame;
+	private JLabel instructions;
+	private JTextArea name, surname, phoneNumber, address, birthdate, likes, dislikes, wantsOnBirthday, education, canHelpWith;
+	private JButton save;
 	
 	public ContactMakeView(){
 		frame = new JFrame("Contacts");
@@ -47,8 +47,110 @@ public class ContactMakeView {
 			frame.add(save);	
 		
 		frame.setVisible(false);
+	}//end of constructor
+	
+	//getters and setters
+	public JFrame getFrame() {
+		return frame;
 	}
-	
-	
-	
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JLabel getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(JLabel instructions) {
+		this.instructions = instructions;
+	}
+
+	public JTextArea getName() {
+		return name;
+	}
+
+	public void setName(JTextArea name) {
+		this.name = name;
+	}
+
+	public JTextArea getSurname() {
+		return surname;
+	}
+
+	public void setSurname(JTextArea surname) {
+		this.surname = surname;
+	}
+
+	public JTextArea getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(JTextArea phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public JTextArea getAddress() {
+		return address;
+	}
+
+	public void setAddress(JTextArea address) {
+		this.address = address;
+	}
+
+	public JTextArea getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(JTextArea birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public JTextArea getLikes() {
+		return likes;
+	}
+
+	public void setLikes(JTextArea likes) {
+		this.likes = likes;
+	}
+
+	public JTextArea getDislikes() {
+		return dislikes;
+	}
+
+	public void setDislikes(JTextArea dislikes) {
+		this.dislikes = dislikes;
+	}
+
+	public JTextArea getWantsOnBirthday() {
+		return wantsOnBirthday;
+	}
+
+	public void setWantsOnBirthday(JTextArea wantsOnBirthday) {
+		this.wantsOnBirthday = wantsOnBirthday;
+	}
+
+	public JTextArea getEducation() {
+		return education;
+	}
+
+	public void setEducation(JTextArea education) {
+		this.education = education;
+	}
+
+	public JTextArea getCanHelpWith() {
+		return canHelpWith;
+	}
+
+	public void setCanHelpWith(JTextArea canHelpWith) {
+		this.canHelpWith = canHelpWith;
+	}
+
+	public JButton getSave() {
+		return save;
+	}
+
+	public void setSave(JButton save) {
+		this.save = save;
+	}
 }//end of class
