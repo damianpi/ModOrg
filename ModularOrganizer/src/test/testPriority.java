@@ -36,12 +36,15 @@ public class testPriority {
 	@After
 	public void tearDown() throws Exception
 	{
+		System.out.println("End test");
 		priority = null;
 	}
 
 	@Test
-	public void testPriorityFirst() {
-			
+	public void testPriorityFirst()
+	{
+		System.out.println("testPriorityFirst()");
+		
 		assertEquals("Fail: variable level", 2, priority.getLevel());
 		assertEquals("Fail: variable name", "Martin", priority.getName());
 	}
@@ -49,6 +52,8 @@ public class testPriority {
 	@Test
 	public void testPrioritySecond() 
 	{
+		System.out.println("testPrioritySecond() ");
+		
 	    Priority priority2 = new Priority(2, "Martin");
 	    
 	    assertEquals("Fail: variable level", priority2.getLevel(), priority.getLevel());
@@ -58,6 +63,8 @@ public class testPriority {
 	@Test
 	public void testPriorityThird()
 	{
+		System.out.println("testPriorityThird()");
+		
 		assertEquals("Fail: variable level", priority.getLevel(), priority.getLevel());
 		assertEquals("Fail: variable name", priority.getName(), priority.getName());
 	}
@@ -66,12 +73,17 @@ public class testPriority {
 	@Test
 	public void testGetLevel()
 	{
-		assertEquals("Fail: variable level", priority.getLevel(), 2);
+		System.out.println("testGetLevel()");
+		
+		int level = 2;
+		assertEquals("Fail: variable level", priority.getLevel(), level);
 	}
 
 	@Test
 	public void testSetLevelFirst()
 	{
+		System.out.println("testSetLevelFirst()");
+		
 		assertEquals("Fail: variable level", priority.getLevel(), 2);
 		priority.setLevel(3);
 		assertEquals("Fail: variable level", priority.getLevel(), 3);
@@ -80,6 +92,8 @@ public class testPriority {
 	@Test
 	public void testSetLevelSecond()
 	{
+		System.out.println("testSetLevelSecond()");
+		
 		int level=3;
 		priority.setLevel(3);
 		assertEquals("Fail: variable level", priority.getLevel(), level);
@@ -88,12 +102,17 @@ public class testPriority {
 	@Test
 	public void testGetName()
 	{
-		assertEquals("Fail: variable name", priority.getName(), "Martin");
+		System.out.println("testGetName()");
+		
+		String name="Martin";
+		assertEquals("Fail: variable name", priority.getName(), name);
 	}
 
 	@Test
 	public void testSetNamFirst()
 	{
+		System.out.println("testSetNamFirst()");
+		
 		assertEquals("Fail: variable name", priority.getName(), "Martin");
 		priority.setName("Jon");
 		assertEquals("Fail: variable name", priority.getName(), "Jon");
@@ -102,6 +121,8 @@ public class testPriority {
 	@Test
 	public void testSetNamSecond()
 	{
+		System.out.println("testSetNamSecond()");
+		
 		String name="Jon";
 		priority.setName("Jon");
 		assertEquals("Fail: variable name", priority.getName(), name);
