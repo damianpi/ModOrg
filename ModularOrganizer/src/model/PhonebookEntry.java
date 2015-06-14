@@ -1,7 +1,5 @@
 package model;
 import java.io.Serializable;
-package model;
-import java.io.Serializable;
 public class PhonebookEntry implements Serializable {
 	
 	private String number;
