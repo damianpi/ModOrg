@@ -9,16 +9,19 @@ import java.awt.*;
 
 public class PhonebookView {
 
-	public JFrame frame;
-	public JLabel instructions;
-	public JScrollPane mainPane,sPane;
-	public JPanel addContact, editContact;
-	public JTextArea addFirstName, addPhoneNumber, removeTaskId, addContactName;
-	public JButton addTaskButton, removeContactButton,EditNButton,EditButton;
-	public JScrollPane textField;
-	public JList list;
+	private JFrame frame;
+	
+	private JLabel instructions;
+	private JScrollPane mainPane,sPane;
+	private JPanel addContact, editContact;
+	private JTextArea addPhoneNumber, addContactName;
+	private JButton addTaskButton, removeContactButton,EditNButton,EditButton;
+	private JScrollPane textField;
+	private JList list;
+	
 	public PhonebookView(){
-		
+
+
 		frame = new JFrame("Phonebook");
 		frame.setSize(800, 600);
 		frame.setLayout(null);
@@ -28,31 +31,31 @@ public class PhonebookView {
 		instructions.setBounds(250, 4, 600, 30);
 		frame.add(instructions);
 		
-	    list = new JList(PhonebookData.data);
-	    
-		mainPane = new JScrollPane(list);
+	    setList(new JList(PhonebookData.getData()));
+	    getList().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		mainPane = new JScrollPane(getList());
 		mainPane.setFocusable(false);
 		mainPane.setBounds(50, 50, 350, 350);
 		
-		textField = new JScrollPane(mainPane);
+		setTextField(new JScrollPane(mainPane));
 		
-		textField.setBounds(50, 50, 350, 350);
-		frame.add(textField);
+		getTextField().setBounds(50, 50, 350, 350);
+		frame.add(getTextField());
 		
-		sPane = new JScrollPane(list);
+		sPane = new JScrollPane(getList());
 		sPane.setFocusable(false);
 		
 		addContact = new JPanel();
 		addContact.setBounds(50, 400, 400, 150);
 		TitledBorder addTaskTitle = BorderFactory.createTitledBorder("Add new contact");
 		addContact.setBorder(addTaskTitle);
-		addContactName= new JTextArea("Contact name", 1, 30);
-		addContact.add(addContactName);
-		addPhoneNumber= new JTextArea("Phone number", 1, 30);
-		addContact.add(addPhoneNumber);
-		addTaskButton = new JButton("Add Contact");
-		addTaskButton.setPreferredSize(new Dimension(300, 50));
-		addContact.add(addTaskButton);
+		setAddContactName(new JTextArea("Contact name", 1, 30));
+		addContact.add(getAddContactName());
+		setAddPhoneNumber(new JTextArea("Phone number (123...)", 1, 30));
+		addContact.add(getAddPhoneNumber());
+		setAddTaskButton(new JButton("Add Contact"));
+		getAddTaskButton().setPreferredSize(new Dimension(300, 50));
+		addContact.add(getAddTaskButton());
 		frame.add(addContact);
 		
 		editContact = new JPanel();
@@ -60,16 +63,70 @@ public class PhonebookView {
 		TitledBorder removeTaskTitle = BorderFactory.createTitledBorder("Edit phonebook");
 		editContact.setBorder(removeTaskTitle);
 		frame.add(editContact);
-		EditButton = new JButton("Edit Name");
-		EditButton.setPreferredSize(new Dimension(125, 50));
-		editContact.add(EditButton);
-		EditNButton = new JButton("Edit Number");
-		EditNButton.setPreferredSize(new Dimension(125, 50));
-		editContact.add(EditNButton);
-		removeContactButton = new JButton("Remove Contact");
-		removeContactButton.setPreferredSize(new Dimension(250, 50));
-		editContact.add(removeContactButton);
+		setEditButton(new JButton("Edit Name"));
+		getEditButton().setPreferredSize(new Dimension(125, 50));
+		editContact.add(getEditButton());
+		setEditNButton(new JButton("Edit Number"));
+		getEditNButton().setPreferredSize(new Dimension(125, 50));
+		editContact.add(getEditNButton());
+		setRemoveContactButton(new JButton("Remove Contact"));
+		getRemoveContactButton().setPreferredSize(new Dimension(250, 50));
+		editContact.add(getRemoveContactButton());
 		
 		frame.setVisible(false);
 	}//end of constr
+	public JFrame getFrame() {
+		return frame;
+	}
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+	public JButton getAddTaskButton() {
+		return addTaskButton;
+	}
+	public void setAddTaskButton(JButton addTaskButton) {
+		this.addTaskButton = addTaskButton;
+	}
+	public JList getList() {
+		return list;
+	}
+	public void setList(JList list) {
+		this.list = list;
+	}
+	public JTextArea getAddContactName() {
+		return addContactName;
+	}
+	public void setAddContactName(JTextArea addContactName) {
+		this.addContactName = addContactName;
+	}
+	public JTextArea getAddPhoneNumber() {
+		return addPhoneNumber;
+	}
+	public void setAddPhoneNumber(JTextArea addPhoneNumber) {
+		this.addPhoneNumber = addPhoneNumber;
+	}
+	public JButton getRemoveContactButton() {
+		return removeContactButton;
+	}
+	public void setRemoveContactButton(JButton removeContactButton) {
+		this.removeContactButton = removeContactButton;
+	}
+	public JButton getEditButton() {
+		return EditButton;
+	}
+	public void setEditButton(JButton editButton) {
+		EditButton = editButton;
+	}
+	public JButton getEditNButton() {
+		return EditNButton;
+	}
+	public void setEditNButton(JButton editNButton) {
+		EditNButton = editNButton;
+	}
+	public JScrollPane getTextField() {
+		return textField;
+	}
+	public void setTextField(JScrollPane textField) {
+		this.textField = textField;
+	}
 }//end of class
