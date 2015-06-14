@@ -10,27 +10,58 @@ import java.util.ArrayList;
 
 public class PhonebookModel {
 	
-	public PhonebookData data;
+	private PhonebookData data;
 	
 	
+	public PhonebookData getData() {
+		return data;
+	}
+
+	public void setData(PhonebookData data) {
+		this.data = data;
+	}
+
 	public PhonebookModel(){
 		this.data = new PhonebookData();
 		
 		try{
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream("C:/ModularOrganizer/Phonebook/Phonebook.pd"));
-			data.dat = (ArrayList<PhonebookEntry>)in.readObject();
+			data.setDat((ArrayList<PhonebookEntry>)in.readObject());
 			in.close();
 		}catch(Exception e){}
 		
 	}
 	
 	public void addEntry(String level, String name){
+		
+		name=uniqueName(name);
 		PhonebookEntry Entry = new PhonebookEntry(level, name);
-		data.data.addElement(Entry.number+Entry.name);
-		data.dat.add(Entry);
+		data.getData().addElement(Entry.getNumber()+Entry.getName());
+		data.getDat().add(Entry);
 		
 	}
 	
+	public String uniqueName(String name) {
+		
+		while(0==0){
+			boolean t=false;
+			for (PhonebookEntry nam : data.getDat()) {
+			
+		
+//			
+				if (name.equals(nam.getName()))
+				{
+					name=name+"'";
+					t=true;
+				}
+//				else
+//					return name;
+//				}
+			}
+		if (t==false) return name;
+		}
+	}
+
 	public void savePhonebook(){
 		File location = new File("C:/ModularOrganizer/Phonebook");
 		
@@ -45,7 +76,7 @@ public class PhonebookModel {
 		}
 		
 		try{
-			ArrayList<PhonebookEntry> pd=data.dat;
+			ArrayList<PhonebookEntry> pd=data.getDat();
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("C:/ModularOrganizer/Phonebook/Phonebook.pd"));
 			out.writeObject(pd);
 			out.close();

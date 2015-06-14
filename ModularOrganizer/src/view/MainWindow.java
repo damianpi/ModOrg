@@ -47,7 +47,7 @@ public class MainWindow {
 		phonebook.setBounds(200, 70, 150, 60);
 		phonebook.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				phonebookController.view.frame.setVisible(true);
+				phonebookController.getView().getFrame().setVisible(true);
 			}
 		});
 		frame.add(phonebook);
