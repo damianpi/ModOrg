@@ -39,21 +39,45 @@ public class testPhonebookEntry {
 	@Test
 	public void testPhonebookEntryFirst() {
 		
-		assertEquals("Fail: variable number", "987654321", phonebookEntry.number);
-		assertEquals("Fail: variable name", "Martin", phonebookEntry.name);
+		assertEquals("Fail: variable number", "987654321", phonebookEntry.getNumber());
+		assertEquals("Fail: variable name", "Martin", phonebookEntry.getName());
 	}
 	
 	@Test
 	public void testPhonebookEntrySecond() {
 	    PhonebookEntry phonebookEntry2 = new PhonebookEntry("987654321", "Martin");
 	    
-	    assertEquals("Fail: variable number", phonebookEntry2.number, phonebookEntry.number);
-		assertEquals("Fail: variable name", phonebookEntry2.name, phonebookEntry.name);
+	    assertEquals("Fail: variable number", phonebookEntry2.getNumber(), phonebookEntry.getNumber());
+		assertEquals("Fail: variable name", phonebookEntry2.getName(), phonebookEntry.getName());
 	}
 	
 	@Test
 	public void testPhonebookEntryThird() {
-		assertEquals("Fail: variable number", phonebookEntry.number, phonebookEntry.number);
-		assertEquals("Fail: variable name", phonebookEntry.name, phonebookEntry.name);
+		assertEquals("Fail: variable number", phonebookEntry.getNumber(), phonebookEntry.getNumber());
+		assertEquals("Fail: variable name", phonebookEntry.getName(), phonebookEntry.getName());
+	}
+	
+	@Test
+	public void testGetName() {
+		assertEquals("Fail: variable name", "Martin", phonebookEntry.getName());
+	}
+	
+	@Test
+	public void testGetNumber() {
+		assertEquals("Fail: variable number", "987654321", phonebookEntry.getNumber());
+	}
+	
+	@Test
+	public void testSetName() {
+		assertEquals("Fail: variable name", "Martin", phonebookEntry.getName());
+		phonebookEntry.setName("Jon");
+		assertEquals("Fail: variable name", "Jon", phonebookEntry.getName());
+	}
+	
+	@Test
+	public void testSetNumber() {
+		assertEquals("Fail: variable number", "987654321", phonebookEntry.getNumber());
+		phonebookEntry.setNumber("123456789");
+		assertEquals("Fail: variable number", "123456789", phonebookEntry.getNumber());
 	}
 }
