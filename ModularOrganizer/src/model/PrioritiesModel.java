@@ -8,10 +8,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 
+/**
+ * Model class for the Priorities module.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class PrioritiesModel {
 	
 	private PrioritiesData data;
 
+	/**
+	 * Constructor for the PrioritiesModel class. Upon creating, tries to load serialized data, if exist. 
+	 */
 	public PrioritiesModel(){
 		this.data = new PrioritiesData();
 		
@@ -23,6 +32,12 @@ public class PrioritiesModel {
 		}catch(Exception e){}
 	}//end of constructor
 
+	/**
+	 * Adds priority to a serializable library.
+	 * 
+	 * @param level
+	 * @param name
+	 */
 	public void addPriority(int level, String name){
 		if(level > 3) level = 3;
 		if(level < 1) level = 1;
@@ -30,6 +45,9 @@ public class PrioritiesModel {
 		data.getData().add(priority);
 	}
 	
+	/**
+	 * Creates a new file containing priorities data, in place of the old one.
+	 */
 	public void savePriorities(){
 		File location = new File("C:/ModularOrganizer/Priorities");
 		
