@@ -8,10 +8,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 
+/**
+ * Model for the Contacts module.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class ContactsModel {
 	
 	private ContactsData data;
 	
+	/**
+	 * Constructor for the ContactsModel class.
+	 */
 	public ContactsModel(){
 		data = new ContactsData();
 		
@@ -24,6 +33,9 @@ public class ContactsModel {
 	}//end of constructor
 	
 	
+	/**
+	 * Checks on the specified location on the hard drive and saves serializable ContactsData object.
+	 */
 	public void saveContacts(){
 		File location = new File("C:/ModularOrganizer/Contacts");
 		
@@ -42,9 +54,7 @@ public class ContactsModel {
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("C:/ModularOrganizer/Contacts/contacts.pd"));
 			out.writeObject(pd);
 			out.close();
-		}catch(Exception e){}
-		
-		
+		}catch(Exception e){}		
 	}//end of saveContacts
 
 	//getters and setters
