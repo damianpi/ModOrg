@@ -3,11 +3,23 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Class that allows to store a single priority created by user.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class Priority implements Serializable {
 	
 	private int level;
 	private String name;
 	
+	/**
+	 * Constructor for the Priority class.
+	 * 
+	 * @param level Integer that describes the level of importance of a task.
+	 * @param name  String which is a name of the task.
+	 */
 	public Priority(int level, String name){
 		this.level = level;
 		this.name = name;
