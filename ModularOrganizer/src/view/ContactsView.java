@@ -3,15 +3,24 @@ package view;
 
 import javax.swing.*;
 
+/**
+ * Class creating the main view for the Contacts module.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class ContactsView {
 
 	private JFrame frame;
 	private JPanel mainPane;
-	public JList list;
+	private JList list = null;
 	private JLabel instructions;
 	private JPanel tools;
 	private JButton selectButton, addContactButton, removeContactButton;
 
+	/**
+	 * Constructor for the ContactsView class.
+	 */
 	public ContactsView(){
 		
 		frame = new JFrame("Contacts");
