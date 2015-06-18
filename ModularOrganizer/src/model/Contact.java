@@ -3,11 +3,30 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Class for holding data of a single contact-person.
+ * @author Damian PIela
+ *
+ */
 public class Contact implements Serializable {
 	
 	private String name, surname, phoneNumber, address, birthdate,
 		likes, dislikes, wantsOnBirthday, education, canHelpWith;
 
+	/**
+	 * Constructor for the Contact class. All parameters are of String type.
+	 * 
+	 * @param name
+	 * @param surname
+	 * @param phoneNumber
+	 * @param address
+	 * @param birthdate
+	 * @param likes
+	 * @param dislikes
+	 * @param wantsOnBirthday
+	 * @param education
+	 * @param canHelpWith
+	 */
 	public Contact(String name, String surname, String phoneNumber,
 			String address, String birthdate, String likes, String dislikes,
 			String wantsOnBirthday, String education, String canHelpWith) {
