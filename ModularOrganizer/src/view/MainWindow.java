@@ -8,6 +8,12 @@ import java.awt.event.*;
 import controller.*;
 
 
+/**
+ * Main window of the program. Allows to choose a module.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class MainWindow {
 	private JFrame frame;
 	private JLabel instructions;
@@ -17,6 +23,13 @@ public class MainWindow {
 	private ContactsController contactsController;
 
 	
+	/**
+	 * Constructor for the MainWindow class.
+	 * 
+	 * @param prioritiesController
+	 * @param phonebookController
+	 * @param contactsController
+	 */
 	public MainWindow(PrioritiesController prioritiesController, PhonebookController phonebookController, 
 								ContactsController contactsController){
 		
