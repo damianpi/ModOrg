@@ -3,6 +3,12 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class for creating the view for adding or browsing a contact.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class ContactMakeView {
 	
 	private JFrame frame;
@@ -10,6 +16,9 @@ public class ContactMakeView {
 	private JTextArea name, surname, phoneNumber, address, birthdate, likes, dislikes, wantsOnBirthday, education, canHelpWith;
 	private JButton save;
 	
+	/**
+	 * Constructor for the ContactMakeView class.
+	 */
 	public ContactMakeView(){
 		frame = new JFrame("Contacts");
 		frame.setSize(400, 650);
