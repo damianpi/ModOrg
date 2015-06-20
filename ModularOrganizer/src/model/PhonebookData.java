@@ -5,11 +5,18 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
+/**A serializable library for storing PhonebookEntry-type objects. 
+ * @author Cinek
+ *
+ */
 public class PhonebookData implements Serializable {
 	
 	private static ArrayList<PhonebookEntry> dat;
 	private static DefaultListModel data;
 	
+	/**Constructor for the PhonebookData class
+	 * 
+	 */
 	public PhonebookData(){
 		this.setData(new DefaultListModel());
 		this.setDat(new ArrayList<PhonebookEntry>());
