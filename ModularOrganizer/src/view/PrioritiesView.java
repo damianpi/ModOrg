@@ -5,6 +5,12 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
+/**
+ * Class for creating the view for the Priorities module.
+ * 
+ * @author Damian Piela
+ *
+ */
 public class PrioritiesView {
 
 	private JFrame frame;
@@ -15,6 +21,9 @@ public class PrioritiesView {
 	private JButton addTaskButton, removeTaskButton;
 	
 	
+	/**
+	 * Constructor for the PrioritiesView class.
+	 */
 	public PrioritiesView(){
 		frame = new JFrame("Priorities");
 		frame.setSize(800, 600);
