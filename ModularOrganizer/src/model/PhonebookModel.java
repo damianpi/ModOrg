@@ -8,6 +8,10 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.util.ArrayList;
 
+/**Model class for the phonebook module.
+ * @author Cinek
+ *
+ */
 public class PhonebookModel {
 	
 	private PhonebookData data;
@@ -21,6 +25,9 @@ public class PhonebookModel {
 		this.data = data;
 	}
 
+	/**Constructor for the PhonebookModel class.
+	 * Upon creating, tries to load serialized data, if exist.
+	 */
 	public PhonebookModel(){
 		this.data = new PhonebookData();
 		
@@ -32,6 +39,11 @@ public class PhonebookModel {
 		
 	}
 	
+	/**Adds PhonebookEntry to a serializable library.
+	 * Checking the uniqueness of the name to crate unique name(" name' " is for second telephone number of this same contact).
+	 * @param level
+	 * @param name
+	 */
 	public void addEntry(String level, String name){
 		
 		name=uniqueName(name);
@@ -41,6 +53,10 @@ public class PhonebookModel {
 		
 	}
 	
+	/**Checking the uniqueness of the name to crate unique name.
+	 * @param name
+	 * @return
+	 */
 	public String uniqueName(String name) {
 		
 		while(0==0){
@@ -62,6 +78,9 @@ public class PhonebookModel {
 		}
 	}
 
+	/**Creates a new file containing priorities data, in place of the old one.
+	 * 
+	 */
 	public void savePhonebook(){
 		File location = new File("C:/ModularOrganizer/Phonebook");
 		

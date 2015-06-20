@@ -7,6 +7,11 @@ import model.PhonebookData;
 
 import java.awt.*;
 
+/**Class for creating the view for the Phonebook module.
+ * @author Cinek
+ *
+ */
+
 public class PhonebookView {
 
 	private JFrame frame;
@@ -19,6 +24,12 @@ public class PhonebookView {
 	private JScrollPane textField;
 	private JList list;
 	
+	
+
+
+	/**Constructor for the PhonebookView class.
+	 *
+	 */
 	public PhonebookView(){
 
 
@@ -35,11 +46,11 @@ public class PhonebookView {
 	    getList().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		mainPane = new JScrollPane(getList());
 		mainPane.setFocusable(false);
-		mainPane.setBounds(50, 50, 350, 350);
+		mainPane.setBounds(50, 50, 700, 350);
 		
 		setTextField(new JScrollPane(mainPane));
 		
-		getTextField().setBounds(50, 50, 350, 350);
+		getTextField().setBounds(50, 50, 700, 350);
 		frame.add(getTextField());
 		
 		sPane = new JScrollPane(getList());
