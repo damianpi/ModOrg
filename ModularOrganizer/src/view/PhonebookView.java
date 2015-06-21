@@ -3,8 +3,6 @@ package view;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-import model.PhonebookData;
-
 import java.awt.*;
 
 /**Class for creating the view for the Phonebook module.
@@ -42,8 +40,7 @@ public class PhonebookView {
 		instructions.setBounds(250, 4, 600, 30);
 		frame.add(instructions);
 		
-	    setList(new JList(PhonebookData.getData()));
-	    getList().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
 		mainPane = new JScrollPane(getList());
 		mainPane.setFocusable(false);
 		mainPane.setBounds(50, 50, 700, 350);
